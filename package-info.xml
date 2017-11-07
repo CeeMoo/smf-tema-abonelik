@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE package-info SYSTEM "http://www.simplemachines.org/xml/package-info">
+
+<package-info xmlns="http://www.simplemachines.org/xml/package-info" xmlns:smf="http://www.simplemachines.org/">
+	<id>ceemoo:temaabonelik</id>
+	<name>tema abonelik System</name>
+	<type>modification</type>
+	<version>1</version>
+	
+	<install for="2.1 - 2.1.99,2.1 Beta 1,2.1 Beta 2">
+		<readme>ReadMe.txt</readme>
+		<require-file name="temaabone2.php" destination="$sourcedir" />
+		<require-file name="temaabone2.template.php" destination="$themedir" />
+		<require-file name="temaabone.css" destination="$themedir/css" />
+		<require-file name="temaabone.english.php" destination="$themedir/languages" />
+		<require-file name="temaabone.turkish.php" destination="$themedir/languages" />
+		<require-file name="temaaboneicon.png" destination="$imagesdir" />
+		<require-file name="temaaboneHooks.php" destination="$sourcedir" />
+		<code>temaaboneinstall.php</code>
+	</install>
+	
+	<upgrade for="2.1 - 2.1.99,2.1 Beta 1,2.1 Beta 2">
+		<readme>ReadMe.txt</readme>
+		<require-file name="temaabone2.php" destination="$sourcedir" />
+		<require-file name="temaabone2.template.php" destination="$themedir" />
+		<require-file name="temaabone.css" destination="$themedir/css" />
+		<require-file name="temaabone.english.php" destination="$themedir/languages" />
+		<require-file name="temaabone.turkish.php" destination="$themedir/languages" />
+		<require-file name="temaaboneicon.png" destination="$imagesdir" />
+		<require-file name="temaaboneHooks.php" destination="$sourcedir" />
+		<code>temaaboneinstall.php</code>
+	
+	</upgrade>
+	<uninstall for="2.1 - 2.1.99,2.1 Beta 1,2.1 Beta 2">
+		<remove-file name="$sourcedir/temaabone2.php" />
+		<remove-file name="$themedir/temaabone2.template.php" />
+		<remove-file name="$themedir/css/temaabone.css" />
+		<remove-file name="$themedir/languages/temaabone.english.php" />
+		<remove-file name="$themedir/languages/temaabone.turkish.php" />
+		<remove-file name="$imagesdir/temaaboneicon.png" />
+		<remove-file name="$sourcedir/temaaboneHooks.php" />
+		<code>temaaboneUnInstall.php</code>
+	</uninstall>
+	
+	
+</package-info>
