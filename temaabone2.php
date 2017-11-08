@@ -46,10 +46,10 @@ function temaabone_gel(){
 	}
 
 	$abonemi = $smcFunc['db_query']('', "SELECT
-		s.id_member
+		s.id_member, s.status
 		FROM {db_prefix}log_subscribed as s
 		 LEFT JOIN {db_prefix}members as m ON (m.id_member = s.id_member)
-		WHERE s.id_member = $uye_id");
+		WHERE s.id_member = $uye_id AND s.status = 1");
 	$abone = $smcFunc['db_fetch_assoc']($abonemi);
 	$smcFunc['db_free_result']($abonemi);
 
@@ -78,7 +78,7 @@ function tema_abone(){
 		FROM {db_prefix}log_subscribed as s
 		 LEFT JOIN {db_prefix}members as m ON (s.id_member = m.id_member)
 		 LEFT JOIN {db_prefix}subscriptions as su ON (s.id_subscribe = su.id_subscribe)
-		WHERE s.id_member = $uye_id");
+		WHERE s.id_member = $uye_id AND s.status = 1");
 	$abone = $smcFunc['db_fetch_assoc']($abonemi);
 
 	$context['abonemi'] = array(
