@@ -12,7 +12,7 @@ function template_mainview()
 	if(!$user_info['is_guest']){
 		abonelikritmi();
 	}else{
-		echo $txt['login_or_register'];
+		ziyaretci();
 	}
 }
 
@@ -55,9 +55,9 @@ function template_gndermisise(){
 function template_adminbak(){
 	global $scripturl, $txt, $context, $modSettings, $subcats_linktree, $user_info, $boardurl;
 
+	echo '<div class="cat_bar"><h3 class="catbg">Başvuruları Onayla</h3></div>';
 	foreach($context['temaabone'] as $i => $row){
 		echo '
-		<div class="cat_bar"><h3 class="catbg">Başvuruları Onayla</h3></div>
 		<form action="', $scripturl, '?action=temaabone&sa=yolla" method="post">
 			<div class="up_contain">
 				<div class="board_icon">'.$row['id_temaabone'].'</div>
@@ -113,39 +113,31 @@ echo '<form method="post" enctype="multipart/form-data" name="abonegnder" id="ab
 	    <div class='progress_inner__bar--set'></div>
 	    <div class='progress_inner__tabs'>
 	      <div class='tab tab-0'>
-	
 	      	<div class='width33'>
 				<div class='cat_bar'><h3 class='catbg'>Gümüş Takımı</h3></div>
 				<div class='up_contain'><strong class='para'>20lira</strong></div>
 				<div class='up_contain iconuzun'><img src='$boardurl/tema/catimgs/2.png' alt=''></div>
 				<div class='up_contain'>1 Ay</div>
-				<div class='up_contain iconuzun'>
-				<label class='takimsec button'><input type='radio' name='takim' value='gümüs' />Gümüş Takımı Seç</label>
-				</div>
+				<div class='up_contain'><label class='takimsec button'><input type='radio' name='takim' value='gümüs' />Gümüş Takımı Seç</label></div>
 	      	</div>
 	
 	      	<div class='width33'>
 				<div class='cat_bar'><h3 class='catbg'>Altın Takımı</h3></div>
 				<div class='up_contain'><strong class='para'>30lira</strong></div>
 				<div class='up_contain iconuzun'><img src='$boardurl/tema/catimgs/3.png' alt=''></div>
-				<div class='up_contain iconuzun'>
 				<div class='up_contain'>1 Ay</div>
-				<label class='takimsec button'><input type='radio' name='takim' value='altin' />Altın Takımı Seç</label>
-				</div>
+				<div class='up_contain'><label class='takimsec button'><input type='radio' name='takim' value='altin' />Altın Takımı Seç</label></div>
 	      	</div>
 	
 	      	<div class='width33'>
 				<div class='cat_bar'><h3 class='catbg'>Elmas Takımı</h3></div>
 				<div class='up_contain'><strong class='para'>40lira</strong></div>
 				<div class='up_contain iconuzun'><img src='$boardurl/tema/catimgs/4.png' alt=''></div>
-				<div class='up_contain iconuzun'>
 				<div class='up_contain'>1 Ay</div>
-				<label class='takimsec button'><input type='radio' name='takim' value='elmas' />Elmas Takımı Seç</label>
-				</div>
+				<div class='up_contain'><label class='takimsec button'><input type='radio' name='takim' value='elmas' />Elmas Takımı Seç</label></div>
 	      	</div>	
 	      </div>
 	      <div class='tab tab-1'>
-	        <h1>Prepare gift</h1>
 	       	".$txt["szlesme"]." 
 	      </div>
 	      <div class='tab tab-2'>
@@ -170,6 +162,36 @@ echo '<form method="post" enctype="multipart/form-data" name="abonegnder" id="ab
 	</div>
 </form>";
 }
+function ziyaretci(){
+	global $txt, $boardurl;
 
+	echo '<div class="ziyaretci">'.$txt['temaabone_kayityap'].'</div>';
+	echo "
+	<div class='tab tab-0'>
+		<div class='width33'>
+			<div class='cat_bar'><h3 class='catbg'>Gümüş Takımı</h3></div>
+			<div class='up_contain'><strong class='para'>20lira</strong></div>
+			<div class='up_contain iconuzun'><img src='$boardurl/tema/catimgs/2.png' alt=''></div>
+			<div class='up_contain'>1 Ay</div>
+			<div class='up_contain'>{$txt['temaabone_kayitl']}</div>
+		</div>
+
+		<div class='width33'>
+			<div class='cat_bar'><h3 class='catbg'>Altın Takımı</h3></div>
+			<div class='up_contain'><strong class='para'>30lira</strong></div>
+			<div class='up_contain iconuzun'><img src='$boardurl/tema/catimgs/3.png' alt=''></div>
+			<div class='up_contain'>1 Ay</div>
+			<div class='up_contain'>{$txt['temaabone_kayitl']}</div>
+		</div>
+
+		<div class='width33'>
+			<div class='cat_bar'><h3 class='catbg'>Elmas Takımı</h3></div>
+			<div class='up_contain'><strong class='para'>40lira</strong></div>
+			<div class='up_contain iconuzun'><img src='$boardurl/tema/catimgs/4.png' alt=''></div>
+			<div class='up_contain'>1 Ay</div>
+			<div class='up_contain'>{$txt['temaabone_kayitl']}</div>
+		</div>	
+	</div>";
+}
 
 ?>

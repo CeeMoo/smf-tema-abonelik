@@ -7,6 +7,8 @@
 .ortalan{text-align: center;margin-top:20px;margin-bottom: 6px;}
 .ortalan img{width:80px;vertical-align: middle;}
 .ortalan img.master{width:47px;}
+
+.ziyaretci{text-align: center;border-radius: 6px;border:1px solid #ddd;margin: 5px 5%;padding: 10px;}
 .progress{
   position: relative;
   min-height: 500px;
