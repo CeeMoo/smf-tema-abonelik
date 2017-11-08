@@ -73,7 +73,7 @@ function tema_abone(){
 	$uye_id = $user_info['id'];
 
 	$abonemi = $smcFunc['db_query']('', "SELECT
-		s.id_member, m.real_name, su.name
+		s.id_member, m.real_name, su.name, s.end_time
 		FROM {db_prefix}log_subscribed as s
 		 LEFT JOIN {db_prefix}members as m ON (s.id_member = m.id_member)
 		 LEFT JOIN {db_prefix}subscriptions as su ON (s.id_subscribe = su.id_subscribe)
@@ -83,6 +83,7 @@ function tema_abone(){
 	$context['abonemi'] = array(
 		'real_name' => $abone['real_name'],
 		'name' => $abone['name'],
+		'end_date' => $abone['end_time'] == 0 ? 'N/A' : timeformat($abone['end_time'], false),
 	);
 
 	$smcFunc['db_free_result']($abonemi);

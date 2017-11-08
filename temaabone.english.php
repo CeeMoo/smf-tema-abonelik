@@ -14,6 +14,7 @@ $txt['altintakim'] = "Altın Takımı";
 $txt['gmstakim'] = "Gümüş Takımı";
 
 $txt['substskler'] = "Tnx for Subscriptions ";
+$txt['subbitis'] = "Bitiş tarihi :";
 $txt['demeekrani'] = "Ödeme Bölümü";
 $txt['dememesaj'] = "Ödeme ekranına ulaşmak için link tıklayın:";
 $txt['gnder'] = "Submit";

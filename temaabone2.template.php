@@ -21,7 +21,7 @@ function template_abone(){
 
 	echo "
 	<div class='cat_bar'><h3 class='catbg'>".$context['abonemi']['name']."</h3></div>
-	<div class='up_contain'>{$txt['substskler']} <strong>{$context['abonemi']['real_name']}</strong></div>";
+	<div class='up_contain yazicim'>{$txt['substskler']} <strong>{$context['abonemi']['real_name']}</strong> {$txt['subbitis']} <strong>{$context['abonemi']['end_date']}</strong></div>";
 
 }
 function template_gndermisise(){
@@ -48,6 +48,7 @@ function template_adminbak(){
 
 	foreach($context['temaabone'] as $i => $row){
 		echo '
+		<div class="cat_bar"><h3 class="catbg">Başvuruları Onayla</h3></div>
 		<form action="', $scripturl, '?action=temaabone&sa=yolla" method="post">
 			<div class="up_contain">
 				<div class="board_icon">'.$row['id_temaabone'].'</div>
