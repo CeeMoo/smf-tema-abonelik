@@ -16,6 +16,14 @@ function template_mainview()
 	}
 }
 
+function template_abone(){
+	global $scripturl, $txt, $context, $modSettings, $subcats_linktree, $user_info, $boardurl;
+
+	echo "
+	<div class='cat_bar'><h3 class='catbg'>".$context['abonemi']['name']."</h3></div>
+	<div class='up_contain'>".$txt['substskler']."".$context['abonemi']['real_name']."</div>";
+
+}
 function template_gndermisise(){
 	global $scripturl, $txt, $context, $modSettings, $subcats_linktree, $user_info, $boardurl;
 

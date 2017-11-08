@@ -44,18 +44,54 @@ function temaabone_gel(){
 		$uye_id = $_SESSION['mc']['id'];
 	}
 
-	$dbresult = $smcFunc['db_query']('', "SELECT id_member FROM {db_prefix}temaabone WHERE id_member = '$uye_id'");
-	$row = $smcFunc['db_fetch_assoc']($dbresult);
-	$smcFunc['db_free_result']($dbresult);
+	$abonemi = $smcFunc['db_query']('', "SELECT
+		s.id_member, m.real_name
+		FROM {db_prefix}log_subscribed as s
+		 LEFT JOIN {db_prefix}members as m ON (m.id_member = s.id_member)
+		WHERE s.id_member = $uye_id");
+	$abone = $smcFunc['db_fetch_assoc']($abonemi);
+	$smcFunc['db_free_result']($abonemi);
 
-	if($row){
-		temaabone_gndermisise();
+	if($abone){
+		tema_abone();
 	}else{
-		temaabone_MainView();
+		$dbresult = $smcFunc['db_query']('', "SELECT id_member FROM {db_prefix}temaabone WHERE id_member = '$uye_id'");
+		$row = $smcFunc['db_fetch_assoc']($dbresult);
+		$smcFunc['db_free_result']($dbresult);
+
+		if($row){
+			temaabone_gndermisise();
+		}else{
+			temaabone_MainView();
+		}
 	}
 
 }
+function tema_abone(){
+	global $context, $scripturl, $mbname, $txt, $modSettings, $user_info, $smcFunc,$sourcedir;
 
+	$uye_id = $user_info['id'];
+
+	$abonemi = $smcFunc['db_query']('', "SELECT
+		s.id_member, m.real_name, su.name
+		FROM {db_prefix}log_subscribed as s
+		 LEFT JOIN {db_prefix}members as m ON (s.id_member = m.id_member)
+		 LEFT JOIN {db_prefix}subscriptions as su ON (s.id_subscribe = su.id_subscribe)
+		WHERE s.id_member = $uye_id");
+	$abone = $smcFunc['db_fetch_assoc']($abonemi);
+
+	$context['abonemi'] = array(
+		'real_name' => $abone['real_name'],
+		'name' => $abone['name'],
+	);
+
+	$smcFunc['db_free_result']($abonemi);
+
+
+	$context['page_title'] = $mbname . ' - ' . $txt['temaabone_text_title'];
+	$context['sub_template']  = 'abone';
+	
+}
 function temaabone_MainView()
 {
 	global $context, $scripturl, $mbname, $txt, $modSettings, $user_info, $smcFunc,$sourcedir;
@@ -115,7 +151,7 @@ function yolla(){
 		$yolla = (int) $_REQUEST['subscribe'];
 	}
 
-	redirectexit('action=admin;area=paidsubscribe;sa=modifyuser;sid='.$yolla.'');
+	redirectexit('action=admin;area=paidsubscribe;sa=modifyuser;sid='.$yolla);
 }
 function temaabone_gndermisise(){
 	global $boardurl, $modSettings, $boarddir, $mbname, $currentVersion, $context, $user_info, $smcFunc, $txt;
