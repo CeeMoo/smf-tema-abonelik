@@ -20,7 +20,6 @@ function template_abone(){
 	global $scripturl, $txt, $context, $modSettings, $subcats_linktree, $user_info, $boardurl;
 
 	echo "
-	<div class='cat_bar'><h3 class='catbg'>".$context['abonemi']['name']."</h3></div>
 	<div class='up_contain yazicim'>{$txt['substskler']} <strong>{$context['abonemi']['real_name']}</strong> {$txt['subbitis']} <strong>{$context['abonemi']['end_date']}</strong></div>";
 
 }
@@ -39,7 +38,7 @@ function template_gndermisise(){
 	}
 
 	echo "
-	<div class='cat_bar'><h3 class='catbg'>{$txt['demeekrani']}</h3></div>
+	<div class='cat_bar'><h3 class='catbg'>{$tematakim}</h3></div>
 	<div class='up_contain yazicim'><strong>{$context['temaabone']['real_name']}</strong> {$txt['dememesaj']} <p>{$tematakim} {$temaallink}</p></div>";
 
 	echo '
@@ -96,13 +95,13 @@ echo '<form method="post" enctype="multipart/form-data" name="abonegnder" id="ab
 	<div class='progress'>
 	  <div class='progress_inner'>
 	    <div class='progress_inner__step'>
-	      <label for='step-1'>Takım seç</label>
+	      <label for='step-1'>{$txt['takimsec']}</label>
 	    </div>
 	    <div class='progress_inner__step'>
-	      <label for='step-2'>Sözleşme</label>
+	      <label for='step-2'>{$txt['szlesmeh1']}</label>
 	    </div>
 	    <div class='progress_inner__step'>
-	      <label for='step-3'>Bilgilerini Onayla</label>
+	      <label for='step-3'>{$txt['bilgionayla']}</label>
 	    </div>
 	    <input checked='checked' id='step-1' name='step' type='radio'>
 	    <input id='step-2' name='step' type='radio'>
@@ -114,35 +113,34 @@ echo '<form method="post" enctype="multipart/form-data" name="abonegnder" id="ab
 	    <div class='progress_inner__tabs'>
 	      <div class='tab tab-0'>
 	      	<div class='width33'>
-				<div class='cat_bar'><h3 class='catbg'>Gümüş Takımı</h3></div>
-				<div class='up_contain'><strong class='para'>20lira</strong></div>
+				<div class='cat_bar'><h3 class='catbg'>{$txt['gmstakim']}</h3></div>
+				<div class='up_contain'><strong class='para'>20Try</strong></div>
 				<div class='up_contain iconuzun'><img src='$boardurl/tema/catimgs/2.png' alt=''></div>
 				<div class='up_contain'>1 Ay</div>
-				<div class='up_contain'><label class='takimsec button'><input type='radio' name='takim' value='gümüs' />Gümüş Takımı Seç</label></div>
+				<div class='up_contain'><label class='takimsec button'><input type='radio' name='takim' value='gümüs' />{$txt['gmstakim']} {$txt['sec']}</label></div>
 	      	</div>
 	
 	      	<div class='width33'>
-				<div class='cat_bar'><h3 class='catbg'>Altın Takımı</h3></div>
-				<div class='up_contain'><strong class='para'>30lira</strong></div>
+				<div class='cat_bar'><h3 class='catbg'>{$txt['altintakim']}</h3></div>
+				<div class='up_contain'><strong class='para'>30Try</strong></div>
 				<div class='up_contain iconuzun'><img src='$boardurl/tema/catimgs/3.png' alt=''></div>
 				<div class='up_contain'>1 Ay</div>
-				<div class='up_contain'><label class='takimsec button'><input type='radio' name='takim' value='altin' />Altın Takımı Seç</label></div>
+				<div class='up_contain'><label class='takimsec button'><input type='radio' name='takim' value='altin' />{$txt['altintakim']} {$txt['sec']}</label></div>
 	      	</div>
 	
 	      	<div class='width33'>
-				<div class='cat_bar'><h3 class='catbg'>Elmas Takımı</h3></div>
-				<div class='up_contain'><strong class='para'>40lira</strong></div>
+				<div class='cat_bar'><h3 class='catbg'>{$txt['elmastakim']}</h3></div>
+				<div class='up_contain'><strong class='para'>40Try</strong></div>
 				<div class='up_contain iconuzun'><img src='$boardurl/tema/catimgs/4.png' alt=''></div>
 				<div class='up_contain'>1 Ay</div>
-				<div class='up_contain'><label class='takimsec button'><input type='radio' name='takim' value='elmas' />Elmas Takımı Seç</label></div>
+				<div class='up_contain'><label class='takimsec button'><input type='radio' name='takim' value='elmas' />{$txt['elmastakim']} {$txt['sec']}</label></div>
 	      	</div>	
 	      </div>
 	      <div class='tab tab-1'>
 	       	".$txt["szlesme"]." 
 	      </div>
 	      <div class='tab tab-2'>
-	        <h1>Onayla</h1>
-	        <p>".$txt["onay"]."</p>
+	        {$txt["onay"]}
 	        <button class='button' type='submit'>".$txt["gnder"]."</button>
 	      </div>
 	    </div>
@@ -169,24 +167,24 @@ function ziyaretci(){
 	echo "
 	<div class='tab tab-0'>
 		<div class='width33'>
-			<div class='cat_bar'><h3 class='catbg'>Gümüş Takımı</h3></div>
-			<div class='up_contain'><strong class='para'>20lira</strong></div>
+			<div class='cat_bar'><h3 class='catbg'>{$txt['gmstakim']}</h3></div>
+			<div class='up_contain'><strong class='para'>20Try</strong></div>
 			<div class='up_contain iconuzun'><img src='$boardurl/tema/catimgs/2.png' alt=''></div>
 			<div class='up_contain'>1 Ay</div>
 			<div class='up_contain'>{$txt['temaabone_kayitl']}</div>
 		</div>
 
 		<div class='width33'>
-			<div class='cat_bar'><h3 class='catbg'>Altın Takımı</h3></div>
-			<div class='up_contain'><strong class='para'>30lira</strong></div>
+			<div class='cat_bar'><h3 class='catbg'>{$txt['altintakim']}</h3></div>
+			<div class='up_contain'><strong class='para'>30Try</strong></div>
 			<div class='up_contain iconuzun'><img src='$boardurl/tema/catimgs/3.png' alt=''></div>
 			<div class='up_contain'>1 Ay</div>
 			<div class='up_contain'>{$txt['temaabone_kayitl']}</div>
 		</div>
 
 		<div class='width33'>
-			<div class='cat_bar'><h3 class='catbg'>Elmas Takımı</h3></div>
-			<div class='up_contain'><strong class='para'>40lira</strong></div>
+			<div class='cat_bar'><h3 class='catbg'>{$txt['elmastakim']}</h3></div>
+			<div class='up_contain'><strong class='para'>40Try</strong></div>
 			<div class='up_contain iconuzun'><img src='$boardurl/tema/catimgs/4.png' alt=''></div>
 			<div class='up_contain'>1 Ay</div>
 			<div class='up_contain'>{$txt['temaabone_kayitl']}</div>
