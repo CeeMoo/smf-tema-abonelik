@@ -42,6 +42,15 @@ function template_gndermisise(){
 	<div class='cat_bar'><h3 class='catbg'>{$txt['demeekrani']}</h3></div>
 	<div class='up_contain yazicim'><strong>{$context['temaabone']['real_name']}</strong> {$txt['dememesaj']} <p>{$tematakim} {$temaallink}</p></div>";
 
+	echo '
+	<div class="ortalan">
+		<img src="'.$boardurl.'/Themes/default/images/iyzico.svg" alt="iyzico" />
+		<img class="master" src="'.$boardurl.'/Themes/default/images/mastercard.svg" alt="mastercard" />
+		<img src="'.$boardurl.'/Themes/default/images/visa.svg" alt="visa" />
+		<img src="'.$boardurl.'/Themes/default/images/ssl.svg" alt="ssl" />
+	</div>
+	';
+
 }
 function template_adminbak(){
 	global $scripturl, $txt, $context, $modSettings, $subcats_linktree, $user_info, $boardurl;

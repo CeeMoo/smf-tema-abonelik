@@ -15,6 +15,10 @@
 		<require-file name="temaabone.english.php" destination="$themedir/languages" />
 		<require-file name="temaabone.turkish.php" destination="$themedir/languages" />
 		<require-file name="temaaboneicon.png" destination="$imagesdir" />
+		<require-file name="iyzico.svg" destination="$imagesdir" />
+		<require-file name="mastercard.svg" destination="$imagesdir" />
+		<require-file name="visa.svg" destination="$imagesdir" />
+		<require-file name="ssl.svg" destination="$imagesdir" />
 		<require-file name="temaaboneHooks.php" destination="$sourcedir" />
 		<code>temaaboneinstall.php</code>
 	</install>
@@ -27,6 +31,10 @@
 		<require-file name="temaabone.english.php" destination="$themedir/languages" />
 		<require-file name="temaabone.turkish.php" destination="$themedir/languages" />
 		<require-file name="temaaboneicon.png" destination="$imagesdir" />
+		<require-file name="iyzico.svg" destination="$imagesdir" />
+		<require-file name="mastercard.svg" destination="$imagesdir" />
+		<require-file name="visa.svg" destination="$imagesdir" />
+		<require-file name="ssl.svg" destination="$imagesdir" />
 		<require-file name="temaaboneHooks.php" destination="$sourcedir" />
 		<code>temaaboneinstall.php</code>
 	
@@ -38,6 +46,10 @@
 		<remove-file name="$themedir/languages/temaabone.english.php" />
 		<remove-file name="$themedir/languages/temaabone.turkish.php" />
 		<remove-file name="$imagesdir/temaaboneicon.png" />
+		<remove-file name="$imagesdir/iyzico.svg" />
+		<remove-file name="$imagesdir/mastercard.svg" />
+		<remove-file name="$imagesdir/visa.svg" />
+		<remove-file name="$imagesdir/ssl.svg" />
 		<remove-file name="$sourcedir/temaaboneHooks.php" />
 		<code>temaaboneUnInstall.php</code>
 	</uninstall>

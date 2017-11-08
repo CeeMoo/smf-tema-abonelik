@@ -4,6 +4,9 @@
 .takimsec{margin:10px 0;}
 .yazicim{padding: 10px;font-size:15px;}
 .yazicim p {display: initial;font-weight: bold;}
+.ortalan{text-align: center;margin-top:20px;margin-bottom: 6px;}
+.ortalan img{width:80px;vertical-align: middle;}
+.ortalan img.master{width:47px;}
 .progress{
   position: relative;
   min-height: 500px;
