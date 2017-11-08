@@ -116,7 +116,7 @@ echo '<form method="post" enctype="multipart/form-data" name="abonegnder" id="ab
 				<div class='cat_bar'><h3 class='catbg'>{$txt['gmstakim']}</h3></div>
 				<div class='up_contain'><strong class='para'>20Try</strong></div>
 				<div class='up_contain iconuzun'><img src='$boardurl/tema/catimgs/2.png' alt=''></div>
-				<div class='up_contain'>1 Ay</div>
+				<div class='up_contain'>{$txt['biray']}</div>
 				<div class='up_contain'><label class='takimsec button'><input type='radio' name='takim' value='gümüs' />{$txt['gmstakim']} {$txt['sec']}</label></div>
 	      	</div>
 	
@@ -124,7 +124,7 @@ echo '<form method="post" enctype="multipart/form-data" name="abonegnder" id="ab
 				<div class='cat_bar'><h3 class='catbg'>{$txt['altintakim']}</h3></div>
 				<div class='up_contain'><strong class='para'>30Try</strong></div>
 				<div class='up_contain iconuzun'><img src='$boardurl/tema/catimgs/3.png' alt=''></div>
-				<div class='up_contain'>1 Ay</div>
+				<div class='up_contain'>{$txt['biray']}</div>
 				<div class='up_contain'><label class='takimsec button'><input type='radio' name='takim' value='altin' />{$txt['altintakim']} {$txt['sec']}</label></div>
 	      	</div>
 	
@@ -132,7 +132,7 @@ echo '<form method="post" enctype="multipart/form-data" name="abonegnder" id="ab
 				<div class='cat_bar'><h3 class='catbg'>{$txt['elmastakim']}</h3></div>
 				<div class='up_contain'><strong class='para'>40Try</strong></div>
 				<div class='up_contain iconuzun'><img src='$boardurl/tema/catimgs/4.png' alt=''></div>
-				<div class='up_contain'>1 Ay</div>
+				<div class='up_contain'>{$txt['biray']}</div>
 				<div class='up_contain'><label class='takimsec button'><input type='radio' name='takim' value='elmas' />{$txt['elmastakim']} {$txt['sec']}</label></div>
 	      	</div>	
 	      </div>
@@ -170,7 +170,7 @@ function ziyaretci(){
 			<div class='cat_bar'><h3 class='catbg'>{$txt['gmstakim']}</h3></div>
 			<div class='up_contain'><strong class='para'>20Try</strong></div>
 			<div class='up_contain iconuzun'><img src='$boardurl/tema/catimgs/2.png' alt=''></div>
-			<div class='up_contain'>1 Ay</div>
+			<div class='up_contain'>{$txt['biray']}</div>
 			<div class='up_contain'>{$txt['temaabone_kayitl']}</div>
 		</div>
 
@@ -178,7 +178,7 @@ function ziyaretci(){
 			<div class='cat_bar'><h3 class='catbg'>{$txt['altintakim']}</h3></div>
 			<div class='up_contain'><strong class='para'>30Try</strong></div>
 			<div class='up_contain iconuzun'><img src='$boardurl/tema/catimgs/3.png' alt=''></div>
-			<div class='up_contain'>1 Ay</div>
+			<div class='up_contain'>{$txt['biray']}</div>
 			<div class='up_contain'>{$txt['temaabone_kayitl']}</div>
 		</div>
 
@@ -186,7 +186,7 @@ function ziyaretci(){
 			<div class='cat_bar'><h3 class='catbg'>{$txt['elmastakim']}</h3></div>
 			<div class='up_contain'><strong class='para'>40Try</strong></div>
 			<div class='up_contain iconuzun'><img src='$boardurl/tema/catimgs/4.png' alt=''></div>
-			<div class='up_contain'>1 Ay</div>
+			<div class='up_contain'>{$txt['biray']}</div>
 			<div class='up_contain'>{$txt['temaabone_kayitl']}</div>
 		</div>	
 	</div>";

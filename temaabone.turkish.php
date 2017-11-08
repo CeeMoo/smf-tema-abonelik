@@ -23,6 +23,7 @@ $txt['takimsec'] = "Takım seç";
 $txt['szlesmeh1'] = "Sözleşme";
 $txt['bilgionayla'] = "Bilgilerini Onayla";
 $txt['sec'] = "Seç";
+$txt['biray'] = "1 ay";
 
 $txt['substskler'] = "Tnx for Subscriptions ";
 $txt['subbitis'] = "Bitiş tarihi :";
