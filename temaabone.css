@@ -2,7 +2,8 @@
 .para{font-size: 35px;line-height: 40px;vertical-align: text-top;font-family: Arial,Helvetica,sans-serif;}
 .iconuzun img{width:50px;}
 .takimsec{margin:10px 0;}
-
+.yazicim{padding: 10px;font-size:15px;}
+.yazicim p {display: initial;font-weight: bold;}
 .progress{
   position: relative;
   min-height: 500px;

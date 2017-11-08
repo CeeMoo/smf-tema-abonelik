@@ -21,27 +21,30 @@ function template_abone(){
 
 	echo "
 	<div class='cat_bar'><h3 class='catbg'>".$context['abonemi']['name']."</h3></div>
-	<div class='up_contain'>".$txt['substskler']."".$context['abonemi']['real_name']."</div>";
+	<div class='up_contain'>{$txt['substskler']} <strong>{$context['abonemi']['real_name']}</strong></div>";
 
 }
 function template_gndermisise(){
 	global $scripturl, $txt, $context, $modSettings, $subcats_linktree, $user_info, $boardurl;
 
 	if($context['temaabone']['temaabonetakim'] == 'elmas'){
-		$temaallink = "elmaslink";
+		$tematakim = $txt['elmastakim'];
+		$temaallink = "<a href='https://iyzi.link/AACKYw'>https://iyzi.link/AACKYw</a>";
 	}elseif($context['temaabone']['temaabonetakim'] == 'altin'){
-		$temaallink = "altinlink";
+		$tematakim = $txt['altintakim'];
+		$temaallink = "<a href='https://iyzi.link/AACKXg'>https://iyzi.link/AACKXg</a>";
 	}else{
-		$temaallink = "gümüslink";
+		$tematakim = $txt['gmstakim'];
+		$temaallink = "<a href='https://iyzi.link/AACKaA'>https://iyzi.link/AACKaA</a>";
 	}
 
-	echo $context['temaabone']['real_name'];
-	echo $context['temaabone']['temaabonetakim'];
-	echo "<br />".$temaallink;
+	echo "
+	<div class='cat_bar'><h3 class='catbg'>{$txt['demeekrani']}</h3></div>
+	<div class='up_contain yazicim'><strong>{$context['temaabone']['real_name']}</strong> {$txt['dememesaj']} <p>{$tematakim} {$temaallink}</p></div>";
+
 }
 function template_adminbak(){
 	global $scripturl, $txt, $context, $modSettings, $subcats_linktree, $user_info, $boardurl;
-	echo "Basvurular";
 
 	foreach($context['temaabone'] as $i => $row){
 		echo '

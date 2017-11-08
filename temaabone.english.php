@@ -8,7 +8,14 @@ http://www.smf.konusal.com
 $txt['temaabone_menu'] = "Abonelik";
 $txt['temaabone_text_title'] = "Abone Sayfası";
 $txt['temaabone_text_yatir'] = "Ödeme Sayfası";
+
+$txt['elmastakim'] = "Elmas Takımı";
+$txt['altintakim'] = "Altın Takımı";
+$txt['gmstakim'] = "Gümüş Takımı";
+
 $txt['substskler'] = "Tnx for Subscriptions ";
+$txt['demeekrani'] = "Ödeme Bölümü";
+$txt['dememesaj'] = "Ödeme ekranına ulaşmak için link tıklayın:";
 $txt['gnder'] = "Submit";
 $txt['gnder_hata'] = "Tema takımını seçtiğinize emin olun.";
 $txt['onay'] = "Bahsedilen sözleşme ve 1aylık takım grubumu seçtim.";

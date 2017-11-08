@@ -45,7 +45,7 @@ function temaabone_gel(){
 	}
 
 	$abonemi = $smcFunc['db_query']('', "SELECT
-		s.id_member, m.real_name
+		s.id_member
 		FROM {db_prefix}log_subscribed as s
 		 LEFT JOIN {db_prefix}members as m ON (m.id_member = s.id_member)
 		WHERE s.id_member = $uye_id");
@@ -101,44 +101,47 @@ function temaabone_MainView()
 
 }
 function temaabone_adminbak(){
-	global $boardurl, $modSettings, $mbname, $boarddir, $currentVersion, $context, $txt, $smcFunc;
+	global $boardurl, $modSettings, $mbname, $boarddir, $currentVersion, $context, $txt, $smcFunc, $user_info;
 
-	$dbresult = $smcFunc['db_query']('', "
-	SELECT
-		p.id_member, p.id_temaabone, m.real_name, p.temaabonetakim
-	FROM {db_prefix}temaabone as p
-		LEFT JOIN {db_prefix}members AS m ON  (p.id_member = m.id_member)");
+	if($user_info['is_admin'] == 1){
+		$dbresult = $smcFunc['db_query']('', "
+		SELECT
+			p.id_member, p.id_temaabone, m.real_name, p.temaabonetakim
+		FROM {db_prefix}temaabone as p
+			LEFT JOIN {db_prefix}members AS m ON  (p.id_member = m.id_member)");
 
-    $context['temaabone'] = array();
+	    $context['temaabone'] = array();
 
-	while($row = $smcFunc['db_fetch_assoc']($dbresult)){
-		$context['temaabone'][] = array(
-			'id_member' => $row['id_member'],
-			'id_temaabone' => $row['id_temaabone'],
-			'real_name' => $row['real_name'],
-			'temaabonetakim' => $row['temaabonetakim'],
-		);
+		while($row = $smcFunc['db_fetch_assoc']($dbresult)){
+			$context['temaabone'][] = array(
+				'id_member' => $row['id_member'],
+				'id_temaabone' => $row['id_temaabone'],
+				'real_name' => $row['real_name'],
+				'temaabonetakim' => $row['temaabonetakim'],
+			);
+		}
+		$smcFunc['db_free_result']($dbresult);
+
+
+		$dbresult2 = $smcFunc['db_query']('', "
+		SELECT s.name, s.id_subscribe FROM {db_prefix}subscriptions as s");
+
+	    $context['subscriptions'] = array();
+
+		while($row = $smcFunc['db_fetch_assoc']($dbresult2)){
+			$context['subscriptions'][] = array(
+				'id_subscribe' => $row['id_subscribe'],
+				'name' => $row['name'],
+			);
+		}
+		$smcFunc['db_free_result']($dbresult2);
+
+
+		$context['page_title'] = $mbname . ' - ' . $txt['temaabone_text_title'];
+		$context['sub_template']  = 'adminbak';
+	}else{
+		redirectexit('');
 	}
-	$smcFunc['db_free_result']($dbresult);
-
-
-	$dbresult2 = $smcFunc['db_query']('', "
-	SELECT s.name, s.id_subscribe FROM {db_prefix}subscriptions as s");
-
-    $context['subscriptions'] = array();
-
-	while($row = $smcFunc['db_fetch_assoc']($dbresult2)){
-		$context['subscriptions'][] = array(
-			'id_subscribe' => $row['id_subscribe'],
-			'name' => $row['name'],
-		);
-	}
-	$smcFunc['db_free_result']($dbresult2);
-
-
-	$context['page_title'] = $mbname . ' - ' . $txt['temaabone_text_title'];
-	$context['sub_template']  = 'adminbak';
-
 
 }
 function yolla(){
@@ -198,7 +201,6 @@ function abonegnder(){
 		$smcFunc['db_query']('', "INSERT INTO {db_prefix}temaabone
 				(id_member,date,temaabonetakim)
 			VALUES ($id_member,$time,'$temaabonetakim')");
-		$smcFunc['db_free_result']($dbresult);
 
 		redirectexit('action=temaabone');
 	}else{
