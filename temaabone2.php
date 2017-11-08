@@ -23,6 +23,7 @@ function temaaboneMain()
 		'gndermisise' => 'temaabone_gndermisise',
 		'abonegnder' => 'abonegnder',
 		'yolla' => 'yolla',
+		'basvurusil' => 'basvurusil',
 	);
 
 	if (isset($_GET['sa']))
@@ -156,6 +157,20 @@ function yolla(){
 	}
 
 	redirectexit('action=admin;area=paidsubscribe;sa=modifyuser;sid='.$yolla);
+}
+function basvurusil(){
+	global $boardurl, $modSettings, $mbname, $boarddir, $currentVersion, $context, $txt, $smcFunc;
+
+	$context['page_title'] = $mbname . ' - ' . $txt['temaabone_text_title'];
+	$context['sub_template']  = 'basvurusil';
+
+	if(isset($_REQUEST['temaabone'])){
+		$sil = (int) $_REQUEST['temaabone'];
+	}
+
+	$smcFunc['db_query']('', "DELETE FROM {db_prefix}temaabone WHERE id_temaabone = $sil LIMIT 1");
+
+	redirectexit('action=temaabone;sa=adminbak');
 }
 function temaabone_gndermisise(){
 	global $boardurl, $modSettings, $boarddir, $mbname, $currentVersion, $context, $user_info, $smcFunc, $txt;

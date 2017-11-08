@@ -54,13 +54,14 @@ function template_adminbak(){
 				<div class="board_icon">'.$row['id_temaabone'].'</div>
 				<div class="info">'.$row['real_name'].'</div>
 				<div class="board_stats">'.$row['temaabonetakim'].'</div>
-				<div class="lastpost">'; 
-					echo '<select name="subscribe" id="subscribe">';
+				<div class="lastpost">
+				<a class="button" href="' . $scripturl . '?action=temaabone;sa=basvurusil;temaabone='.$row['id_temaabone'].'">Sil</a>
+					<select name="subscribe" id="subscribe">';
 					foreach($context['subscriptions'] as $i => $row){
 						echo '<option value="'.$row['id_subscribe'].'">'.$row['name'].'</option>';					
 					}
-					echo '</select>';
-				echo'
+				echo '
+					</select>
 				<button class="button" type="submit">Ekle</button>
 				</div>
 			</div>
@@ -68,6 +69,9 @@ function template_adminbak(){
 	}
 }
 function template_yolla(){
+	global $scripturl, $txt, $context, $modSettings, $subcats_linktree, $user_info, $boardurl;
+}
+function template_basvurusil(){
 	global $scripturl, $txt, $context, $modSettings, $subcats_linktree, $user_info, $boardurl;
 }
 
